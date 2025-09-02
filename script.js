@@ -84,18 +84,23 @@ document.querySelectorAll('img').forEach(img => {
 });
 
 // Enhanced Parallax effect for hero section
+const heroContent = document.querySelector('.hero-content');
+
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
     const scrolled = window.pageYOffset;
     hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-    
-    // Add tilt effect to hero content
-    const heroContent = document.querySelector('.hero-content');
-    const xAxis = (window.innerWidth / 2 - window.event.clientX) / 25;
-    const yAxis = (window.innerHeight / 2 - window.event.clientY) / 25;
+});
+
+document.addEventListener('mousemove', (e) => {
+    const xAxis = (window.innerWidth / 2 - e.clientX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.clientY) / 25;
     heroContent.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 });
 
+document.addEventListener('mouseleave', () => {
+    heroContent.style.transform = 'rotateY(0) rotateX(0)';
+});
 // Add mouse move effect to cards
 document.querySelectorAll('.benefit-card, .reason-card, .story-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -316,10 +321,10 @@ document.addEventListener('DOMContentLoaded', function() {
     new Chart(migrationCtx, {
         type: 'line',
         data: {
-            labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+            labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
             datasets: [{
                 label: 'Zuwanderung nach Deutschland',
-                data: [890000, 500000, 416000, 400000, 327000, 220000, 329000, 268000, 280000],
+                data: [890000, 500000, 416000, 400000, 327000, 220000, 329000, 268000, 280000, 300000],
                 borderColor: '#3498db',
                 backgroundColor: 'rgba(52, 152, 219, 0.1)',
                 tension: 0.4,
@@ -355,10 +360,10 @@ document.addEventListener('DOMContentLoaded', function() {
     new Chart(integrationCtx, {
         type: 'bar',
         data: {
-            labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+            labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
             datasets: [{
                 label: 'Erwerbstätige mit Migrationshintergrund',
-                data: [7.3, 7.8, 8.2, 8.5, 8.9, 9.1, 9.4, 9.7, 10.0],
+                data: [7.3, 7.8, 8.2, 8.5, 8.9, 9.1, 9.4, 9.7, 10.0, 10.4],
                 backgroundColor: 'rgba(52, 152, 219, 0.8)',
                 borderColor: '#3498db',
                 borderWidth: 1

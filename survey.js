@@ -224,10 +224,10 @@ function updateCharts() {
 function updateUpperDiagrams() {
     // Migration Chart
     const migrationData = {
-        labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+        labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
         datasets: [{
             label: 'Migration nach Deutschland',
-            data: [890000, 670000, 186000, 166000, 327000, 221000, 191000, 244000, 329000],
+            data: [890000, 670000, 186000, 166000, 327000, 221000, 191000, 244000, 329000, 300000],
             borderColor: '#3498db',
             backgroundColor: 'rgba(52, 152, 219, 0.1)',
             fill: true
